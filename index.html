@@ -16,22 +16,82 @@
                 </div>
             </div>
         </div>
+        <div class="slides">
+            <div class="slide" data-background="/images/slider-1.jpg">
+            </div>
+            <div class="slide" data-background="/images/slider-2.jpg">
+            </div>
+        </div>
     </div>
     <div class="menu-line">
-        <div class="left-ribbon"></div>
-        <div class="right-ribbon"></div>
+        <div class="menu-ribbon menu-ribbon_left"></div>
+        <div class="menu-ribbon menu-ribbon_right"></div>
         <div class="wrapper">
             <nav class="navbar">
                 <ul class="menu">
                     <li>
                         <a href="#">О компании</a>
                     </li>
-                    <li><a href="#">Коллекции</a>
-                      <ul class="submenu">
-                        <li><a href="#">Куклы</a></li>
-                        <li><a href="#">Одежда для кукол</a></li>
-                        <li><a href="#">Мебель для кукол</a></li> 
-                      </ul>
+                    <li>
+                        <a href="#">Коллекции</a>
+                        <ul class="sub-menu__list">               
+                            <li class="sub-menu__item sub-menu__item_dolls">
+                                <a href="#">Куклы</a>
+                                <ul class="sub-menu__list_small">
+                                    <li class="sub-menu__item_medium">
+                                        <a href="#">Куклы виниловые</a>
+                                        <ul class="sub-menu__list_small">
+                                            <li class="sub-menu__item_small"><a href="#">Куклы 32 см</a></li>
+                                            <li class="sub-menu__item_small"><a href="#">Куклы 40 см</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-menu__item_medium">
+                                        <a href="#">Куклы мягконабивные</a>
+                                        <ul class="sub-menu__list_small">
+                                            <li class="sub-menu__item_small"><a href="#">Куклы 32 смПлатья</a></li>
+                                            <li class="sub-menu__item_small"><a href="#">Куклы 40 см</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sub-menu__item sub-menu__item_clothes">
+                                <a href="#">Одежда для кукол</a>
+                                <ul class="sub-menu__list_small">
+                                    <li class="sub-menu__item_small"><a href="#">Платья</a></li>
+                                    <li class="sub-menu__item_small"><a href="#">Юбки</a></li>
+                                    <li class="sub-menu__item_small"><a href="#">Кофточки</a></li>
+                                    <li class="sub-menu__item_small"><a href="#">Обувь</a></li>
+                                </ul>
+                            </li>
+                            <li class="sub-menu__item sub-menu__item_furniture">
+                                <a href="#">Мебель для кукол</a>
+                                <ul class="sub-menu__list sub-menu__list_small">
+                                    <li class="sub-menu__item_small"><a href="#">Кроватки</a></li>
+                                    <li class="sub-menu__item_small"><a href="#">Комоды</a></li>
+                                    <li class="sub-menu__item_small"><a href="#">Столы и стулья</a></li>
+                                    <li class="sub-menu__item_small"><a href="#">Шкафы</a></li>
+                                </ul>
+                            </li>
+                            <li class="sub-menu__item sub-menu__item_accessories">
+                                <a href="#">Аксессуары</a>
+                                <ul class="sub-menu__list sub-menu__list_small">
+                                    <li class="sub-menu__item_small"><a href="#">Сумки</a></li>
+                                    <li class="sub-menu__item_small"><a href="#">Очки</a></li>
+                                    <li class="sub-menu__item_small"><a href="#">Украшения</a></li>
+                                    <li class="sub-menu__item_small"><a href="#">Сумки</a></li>
+                                    <li class="sub-menu__item_small"><a href="#">Очки</a></li>
+                                    <li class="sub-menu__item_small"><a href="#">Украшения</a></li>
+                                </ul>
+                            </li>
+                            <li class="sub-menu__item sub-menu__item_more">
+                                <a href="#">Что-то еще</a>
+                                <ul class="sub-menu__list sub-menu__list_small">
+                                    <li class="sub-menu__item_small"><a href="#">Сумки</a></li>
+                                    <li class="sub-menu__item_small"><a href="#">Очки</a></li>
+                                    <li class="sub-menu__item_small"><a href="#">Украшения</a></li>
+                                </ul>
+                            </li> 
+                        </ul>
                     </li>
                     <li>
                         <a href="#">Каталоги</a>
@@ -47,6 +107,15 @@
                     </li>
                 </ul>
             </nav>
+            <div class="social menu-line__social flex">
+                <a href="#" class="social__link social__link_vk"></a>
+                <a href="#" class="social__link social__link_insta"></a>
+            </div>
+        </div>
+        <div class="sub-menu">
+            <div class="wrapper">
+                
+            </div>
         </div>
     </div>
     <div class="brand">
@@ -139,6 +208,9 @@
                             <a href="#">О компании</a>
                         </li>
                         <li>
+                            <a href="#">Коллекции</a>
+                        </li>
+                        <li>
                             <a href="#">Каталоги</a>
                         </li>
                         <li>
@@ -163,7 +235,7 @@
         </div>
         <div class="footer3">
             <div class="wrapper flex_between">
-               <div class="copyright">© «Reina del Norte»,  2018.</div>
+               <div class="copyright">&copy «Reina del Norte»,  2018.</div>
                <div class="sitename">
                    Разработка сайта:  
                    <a href="https://weblamas.com/">WebLamas</a>
@@ -175,4 +247,5 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/slider.js"></script>
 </html> 
