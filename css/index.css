@@ -136,12 +136,9 @@ button,input,select,textarea{
     position: relative;
 }
 
-.menu-line .wrapper {
-
-}
-
 .menu-ribbon {
     background: url(../images/stripes.png) rgb(55, 121, 135);
+    box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.25);
     height: 60px;
     width: calc((100% - 1200px) /2 + 20px);
     position: absolute;
@@ -158,6 +155,28 @@ button,input,select,textarea{
     left: auto;
 }
 
+.menu-line__social {
+    position: absolute;
+    right: calc((100% - 1200px) /2 + 10px);
+    top: 6px;
+    z-index: 3;
+}
+
+.menu-line__social .social__link {
+    display: block;
+    box-sizing: border-box;
+    background: url(../images/sprites.svg) no-repeat -62px -3px rgb(60, 93, 124);
+    border-bottom: 3px solid #0f4241;
+    border-radius: 8px;
+    width: 48px;
+    height: 50px;
+    margin-left: 15px;
+}
+
+.menu-line__social .social__link_insta {
+    background: url(../images/sprites.svg) no-repeat -3px -3px rgb(255, 132, 105);
+}
+
 .menu-line .navbar {
     display: flex;
     background: url(../images/stripes.png) rgb(55, 150, 168);
@@ -172,18 +191,19 @@ button,input,select,textarea{
     border-style: solid;
     border-color: transparent;
     bottom: -10px;
+    z-index: 2;
 }
 
 .menu-line .navbar:before{
     border-width: 0 20px 10px 0;
     border-right-color: #222;
-    left: 0;
+    left: calc((100% - 1200px) /2);
 }
 
 .menu-line .navbar:after{
     border-width: 0 0 10px 20px;
     border-left-color: #222;
-    right: 0;
+    right: calc((100% - 1200px) /2);
 }
 
 .menu {
@@ -209,17 +229,19 @@ button,input,select,textarea{
 
 .sub-menu {
     background: rgb(255,255,255);
+    box-sizing: border-box;
     box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
     position: absolute;
-    width: 100vw;
+    width: 100%;
     padding: 80px 0;
     top: 60px;
     left: 0;
     right: 0;
     z-index: 1;
     list-style: none;
-    padding: 50px 40px 0;
-    display: flex;
+    padding: 40px 0 30px;
+    display: none;
+    justify-content: center;
 }
 
 .menu li:hover .sub-menu {
@@ -229,18 +251,19 @@ button,input,select,textarea{
 .sub-menu__item {
     box-sizing: border-box;
     width: 20%;
-    padding: 0 10px;
+    max-width: 200px;
+    margin: 0 25px;
     position: relative;
 }
 
 .sub-menu__item>a {
     display: block;
     position: relative;
-    font: 700 18px "PTSans";
+    font: 700 18px "PTSans-Narrow";
     color: rgb(0, 55, 60);
     text-transform: uppercase;
     text-decoration: none;
-    padding: 140px 0 5px;
+    padding: 125px 0 5px;
     position: relative;
 }
 
@@ -298,39 +321,17 @@ button,input,select,textarea{
     padding: 3px 0;
 }
 
-.menu-line__social {
-    position: absolute;
-    right: 50px;
-    top: 6px;
-    z-index: 3;
-}
-
-.menu-line__social .social__link {
-    display: block;
-    box-sizing: border-box;
-    background: url(../images/sprites.svg) no-repeat -62px -3px rgb(60, 93, 124);
-    border-bottom: 3px solid #0f4241;
-    border-radius: 8px;
-    width: 48px;
-    height: 50px;
-    margin-left: 15px;
-}
-
-.menu-line__social .social__link_insta {
-    background: url(../images/sprites.svg) no-repeat -3px -3px rgb(255, 132, 105);
-}
-
 /*brand*/
 
-.brand {
+.photo-info {
     overflow: hidden;
 }
 
-.brand .wrapper {
+.photo-info .wrapper {
     position: relative;
 }
 
-.brand__background1 {
+.photo-info__background1 {
     background: #f0faff;
     border-radius: 50%;
     width: 450px;
@@ -340,7 +341,7 @@ button,input,select,textarea{
     left: -30px;
 }
 
-.brand__background2 {
+.photo-info__background2 {
     background: url(../images/dottes.png) rgb(255, 205, 193);
     border-radius: 50%;
     width: 770px;
@@ -350,7 +351,7 @@ button,input,select,textarea{
     left: -490px;
 }
 
-.brand__background3 {
+.photo-info__background3 {
     background: #f0faff;
     border-radius: 50%;
     width: 500px;
@@ -360,19 +361,19 @@ button,input,select,textarea{
     right: -447px;
 }
 
-.brand__photo {
+.photo-info__photo {
     background: url(../images/dolls-mainpage.png) no-repeat center;
     width: 45%;
     position: relative;
 }
 
-.brand__information {
+.photo-info__information {
     flex: 1;
     padding: 65px 0 75px 60px;
     position: relative;
 }
 
-.brand__info {
+.photo-info__info {
     margin-bottom: 45px;
 }
 
@@ -646,6 +647,25 @@ footer .social__link_insta {
         padding: 0 15px;
     }
     
+    .menu-ribbon {
+        width: 35px;
+    }
+    
+    .menu-line .navbar:before{
+        left: 15px;
+    }
+
+    .menu-line .navbar:after{
+        right: 15px;
+    }
+    
+    .menu-line__social {
+        right: 25px;
+    }
+
+}
+
+@media screen and (max-width: 1023px) {
     header .navbar {
         display: none;
     }
@@ -653,15 +673,6 @@ footer .social__link_insta {
     header .burger {
         display: block;
     }
-    
-    .menu-ribbon {
-        width: 35px;
-    }
-
-}
-
-@media screen and (max-width: 1023px) {
-	
 
 }
 
