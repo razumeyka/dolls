@@ -43,7 +43,7 @@ body{
 	font-size: 15px;
     font-weight: 400;
 	line-height:1.4;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.04em;
     color: rgb(0, 0, 0);
 	min-width: 360px;
 }
@@ -51,6 +51,13 @@ body{
 button,input,select,textarea{
     font-family:'PTSans'; 
     font-size: 17px;
+}
+
+p {
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    line-height: 1.35;
+    margin-bottom: 20px;
 }
 
 .wrapper {
@@ -83,17 +90,20 @@ button,input,select,textarea{
 
 .header-ribbons__ribbon1 {
     background: url(../images/main-ribbon.svg) no-repeat center bottom;
-    width: 170px;
+    width: 177px;
     height: 189px;
     margin: 0 auto;
     padding-top: 10px;
+    position: relative;
 }
 
 .header-ribbons__ribbon2 {
     background: url(../images/main-ribbon-2.svg) no-repeat center;
     width: 350px;
     height: 155px;
-    margin-left: -90px;
+    position: absolute;
+    left: calc(50% - 175px);
+    bottom: 30px;
 }
 
 .header-ribbons__logo {
@@ -101,6 +111,10 @@ button,input,select,textarea{
     width: 170px;
     height: 140px;
     margin: 0 auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
 }
 
 /*slider*/
@@ -135,7 +149,7 @@ button,input,select,textarea{
 
 /*menu*/
 
-.menu-line {
+.menu-ribbons {
     position: relative;
 }
 
@@ -158,6 +172,27 @@ button,input,select,textarea{
     left: auto;
 }
 
+.menu-ribbon:before {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-color: transparent;
+    bottom: 0;
+    z-index: 2;
+}
+
+.menu-ribbon_left:before {
+    border-width: 0 20px 10px 0;
+    border-right-color: #222;
+    right: 0;
+}
+
+.menu-ribbon_right:before {
+    border-width: 0 0 10px 20px;
+    border-left-color: #222;
+    left: 0;
+}
+
 .menu-line__social {
     position: absolute;
     right: calc((100% - 1200px) /2 + 10px);
@@ -169,10 +204,10 @@ button,input,select,textarea{
     display: block;
     box-sizing: border-box;
     background: url(../images/sprites.svg) no-repeat -62px -3px rgb(60, 93, 124);
-    border-bottom: 3px solid #0f4241;
+    box-shadow: 0 3px 0px 0px #0f4241;
     border-radius: 8px;
     width: 48px;
-    height: 50px;
+    height: 47px;
     margin-left: 15px;
 }
 
@@ -180,33 +215,18 @@ button,input,select,textarea{
     background: url(../images/sprites.svg) no-repeat -3px -3px rgb(255, 132, 105);
 }
 
+.menu-line {
+    position: relative;
+    z-index: 3;
+}
+
 .menu-line .navbar {
     display: flex;
     background: url(../images/stripes.png) rgb(55, 150, 168);
     box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.25);
+    height: 61px;
     z-index: 3;
     margin-top: -20px;
-}
-
-.menu-line .navbar:before, .menu-line .navbar:after{
-    content: '';
-    position: absolute;
-    border-style: solid;
-    border-color: transparent;
-    bottom: -10px;
-    z-index: 2;
-}
-
-.menu-line .navbar:before{
-    border-width: 0 20px 10px 0;
-    border-right-color: #222;
-    left: calc((100% - 1200px) /2);
-}
-
-.menu-line .navbar:after{
-    border-width: 0 0 10px 20px;
-    border-left-color: #222;
-    right: calc((100% - 1200px) /2);
 }
 
 .menu {
@@ -297,7 +317,7 @@ button,input,select,textarea{
     background-color: rgb(100, 205, 193);
 }
 
-.sub-menu__list {
+.sub-menu ul {
     display: block;
     margin: 0;
     padding: 0;
@@ -323,6 +343,55 @@ button,input,select,textarea{
     text-decoration: none;
     padding: 3px 0;
 }
+
+.burger {
+    display: none;
+    position: absolute;
+    width: 40px;
+    height: 42px;
+    right: 25px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    cursor: pointer;
+}
+
+.burger span, .burger span::before, .burger span::after {
+    display: block;
+    cursor: pointer; 
+    height: 3px;
+    width: 30px;
+    background: rgb(255, 255, 255);
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    transition: all 200ms ease-in-out;
+}
+
+.burger span::before {
+    content: '';
+    left: 0;
+}
+
+.burger span::after {
+    content: '';
+    left: 0;
+    top: 20px;
+}
+
+.burger_active span {
+    background-color: transparent;
+}
+    
+.burger_active span::before  {
+    transform: rotate(45deg);
+    top: 8px;
+}
+
+.burger_active span::after  {
+    transform: rotate(-45deg);
+    top: 8px;
+} 
 
 /*brand*/
 
@@ -376,30 +445,23 @@ button,input,select,textarea{
     position: relative;
 }
 
-.photo-info__info {
+.photo-info__text {
     margin-bottom: 45px;
 }
 
-.info__caption {
+.photo-info__caption {
     font: 700 46px "PTSans-Narrow";
     margin: 0 0 22px;
 }
 
-.info__description {
-    font-size: 18px;
-    letter-spacing: 0.5px;
-    line-height: 1.35;
-    margin-bottom: 20px;
-}
-
 .icons-info {
-    margin: 0 -15px;
+    margin: 0 -5px;
 }
 
 .icons-info__item {
     width: 25%;
     box-sizing: border-box;
-    padding: 0 15px;
+    padding: 0 5px;
 }
 
 .icons-info__background {
@@ -408,6 +470,7 @@ button,input,select,textarea{
     width: 100px;
     height: 100px;
     margin: 0 auto 15px;
+    position: relative;
 }
 
 .icons-info__item:nth-child(even) .icons-info__background {
@@ -419,10 +482,14 @@ button,input,select,textarea{
 	width: 110px;
 	height: 110px;
     margin: 0 auto;
+    position: absolute;
+    right: 5px;
+    bottom: 0px;
 }
 
 .icons-info__icon_russian {
     background-position: -169px -74px;
+    right: 15px;
 }
 
 .icons-info__icon_european {
@@ -431,6 +498,8 @@ button,input,select,textarea{
 
 .icons-info__icon_vanilla {
     background-position: -497px -75px;
+    bottom: -10px;
+    right: 0;
 }
 
 .icons-info__text {
@@ -477,11 +546,11 @@ button,input,select,textarea{
 .last-news__button {
     background-color: rgb(99, 191, 201);
     border-radius: 20px;
-    width: 160px;
     height: 40px;
     font: 700 15px/40px "PTSans-Caption";
     color: rgb(255, 255, 255);
     text-transform: uppercase;
+    padding: 0 25px;
     margin-left: 18px;
 }
 
@@ -529,13 +598,13 @@ button,input,select,textarea{
 
 .logo {
     display: block;
-    background: url(../images/sprites.svg) no-repeat -10px -201px;
-	width: 132px;
-	height: 100px;
+    background: url(../images/sprites.svg) no-repeat -8px -199px;
+    width: 131px;
+    height: 100px;
 }
 
 .contacts {
-    margin: 7px 0 0 15px;
+    margin: auto 15px;
 }
 
 .contacts__contact {
@@ -594,6 +663,7 @@ button,input,select,textarea{
 .footer2 .menu a  {
     font-size: 15px;
     font-weight: 400;
+    text-shadow: none;
     padding: 13px 10px 11px;
 }
 
@@ -653,38 +723,140 @@ footer .social__link_insta {
     .menu-ribbon {
         width: 35px;
     }
-    
-    .menu-line .navbar:before{
-        left: 15px;
-    }
-
-    .menu-line .navbar:after{
-        right: 15px;
-    }
-    
+        
     .menu-line__social {
-        right: 25px;
+        left: 25px;
+        right: auto;
     }
-
-}
-
-@media screen and (max-width: 1023px) {
-    header .navbar {
+    
+    .menu-line .menu {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: white;
+        width: 100%;
+    }
+    
+    .menu-line .menu>li {
+        float: none;
+        text-align: center;
+    }
+    
+    .menu-line .menu>li>a {
+        box-sizing: border-box;
+        color: #4891a2;
+        border-bottom: 1px solid #4891a2;
+        width: 100%;
+        text-shadow: none;
+    }
+    
+    .menu li:hover .sub-menu {
         display: none;
     }
     
-    header .burger {
+    .sub-menu {
+        box-shadow: none;
+        position: static;
+        width: 100%;
+        padding: 10px 0;
+        border-bottom: 1px solid #4891a2;
+    } 
+    
+    .sub-menu__item {
+        max-width: none;
+        width: 100%;
+        margin: 0;
+    }
+    
+    .sub-menu__item>a::before {
+        display: none;
+    }
+    
+    .sub-menu__item>a {
+        padding: 5px 0;
+    }
+    
+    .sub-menu ul {
+        display: none;
+    }
+    
+    .burger {
         display: block;
     }
+    
+    .last-news__ribbon {
+        right: 15px;
+    }
+}
 
+@media screen and (max-width: 1023px) {
+    .photo-info__photo {
+        display: none;
+    }
+    
+    .photo-info__information {
+        padding: 65px 0 75px;
+    }
+    
+    .last-news {
+        text-align: center;
+    }
+    
+    .article-list__item {
+        width: 100%;
+        text-align: left;
+        margin: 10px 0;
+    }
+    
+    .last-news__caption {
+        float: none;
+    }
+    
+    .last-news__button {
+        margin: 10px 0 0;
+    }
 }
 
 @media screen and (max-width: 767px) {
-	
+	.icons-info__item {
+        width: 50%;
+        padding: 20px 5px;
+    }
+    
+    footer .wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .logo-contacts {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 	
 }
 
 @media screen and (max-width: 639px) {
-
-
+    
+    .photo-info__background3 {
+        display: none;
+    }
+    
+    .last-news__ribbon {
+        display: none;
+    }   
+    
+    .footer2 .menu li {
+        float: none;
+        text-align: center;
+    }
+    
+    .footer2 .menu li:before {
+        display: none;
+    }
+    
+    .footer2 .menu li:first-child a {
+        padding: 13px 10px 11px;
+    }
 }
