@@ -1,9 +1,31 @@
 <!DOCTYPE html>
-<html>
- <head>
- @@include('./template/head.html')
- </head>
- <body>
-
-  </body>
+<html lang="ru">
+@@include('template/head.html')
+<body>
+    @@include('template/header-ribbons.html')
+    <header></header>
+    @@include('template/menu-ribbons.html')
+    <div class="inner-page">
+        <div class="wrapper">
+            @@include('template/breadcrumbs.html')
+            <div class="card flex">
+                <div class="card__photos">				
+                    @@include('template/card-slider.html')
+                    <div class="card__controls">
+                        <div class="card__control card__control_prev"></div>
+                        <div class="card__control card__control_next"></div>
+                    </div>
+                </div>
+                <div class="card__details">
+                    <h1 class="caption">Бланка</h1>
+                    <p>Здесь будет описание куклы «Бланка». Текст про уникальность и особенности изделия. Красивые куколки требуют красивого описания. Материалы очень качественные: винил, нейлон. Все как положено и абсолютно безопасно.</p>
+                </div>
+            </div>           
+        </div>
+    </div>
+    @@include('template/last-news.html')
+    @@include('template/footer.html')
+</body>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/main.js"></script>
 </html>
