@@ -713,25 +713,106 @@ header {
 }
 
 .inner-page {
-    padding: 50px 0;
+    padding: 35px 0;
 }
 
 @import "parts/breadcrumbs.less";
 
 .card {
-    padding-bottom: 50px;
     position: relative;
 }
 
 .card__photos {
-    width: 53%;
+    width: 50%;
     position: relative;
 }
+
+@import "parts/card-slider.less";
 
 .card__details {
     flex: 1;
     margin-left: 50px;
 }
+
+.card__article {
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: rgb(197, 234, 237);
+    width: 75px;
+    height: 21px;
+    font-size: 12px;
+    color: rgb(0, 55, 60);
+    text-align: center;
+    line-height: 21px;
+}
+
+.card__description {
+    box-sizing: border-box;
+    border-bottom: 1px solid #e2e2e2;
+    border-top: 1px solid #e2e2e2;
+    font-size: 14px;
+    color: #000;
+    padding: 15px 0 15px 70px;
+    position: relative;
+    margin: 25px 0 10px;
+}
+
+.card__description::before {
+    content: "";
+    background: url('../images/sprites.svg') no-repeat -14px -324px;
+	width: 56px;
+	height: 56px;
+    position: absolute;
+    left: 0;
+    top: 15px;
+}
+
+.card-icons__item {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 7px 0;
+}
+
+.card-icons__icon {
+    background: url('../images/sprites.svg') no-repeat -12px -398px;
+	width: 60px;
+	height: 60px;
+}
+
+.card-icons__icon_masterbox-size {
+    background-position: -11px -622px;
+}
+
+.card-icons__icon_box-size {
+    background-position: -12px -472px;
+}
+
+.card-icons__icon_volume {
+    background-position: -8px -697px;
+}
+
+.card-icons__icon_quantity {
+    background-position:  -11px -547px;
+}
+
+.card-icons__icon_weight {
+    background-position:  -8px -773px;
+}
+
+.card-icons__text {
+    margin: auto 0 auto 15px;;
+}
+
+.card-icons__text1 {
+    font: 700 15px "PTSans";
+    color: rgb(0, 0, 0);
+}
+
+.card-icons__text2 {
+    font-size: 12px;
+    color: rgb(121, 121, 121);
+}
+
 
 
 /*media*/
@@ -845,6 +926,14 @@ header {
     .last-news__button {
         margin: 10px 0 0;
     }
+    
+    .card__photos {
+        width: 100%;
+    }
+    
+    .card__details {
+        margin: 30px 0 0 0;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -887,5 +976,9 @@ header {
     
     .footer2 .menu li:first-child a {
         padding: 13px 10px 11px;
+    }
+    
+    .card-icons__item {
+        width: 100%;
     }
 }

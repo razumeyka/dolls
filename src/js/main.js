@@ -1,5 +1,6 @@
 @@include('./lib/jquery.fancybox.min.js')
 @@include('./lib/slider.js')
+@@include('./lib/card.js')
 
 $(document).ready(function(){
     
