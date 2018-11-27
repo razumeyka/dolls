@@ -1,0 +1,245 @@
+/*menu*/
+
+.menu-ribbons {
+    position: relative;
+}
+
+.menu-ribbon {
+    background: url(../images/stripes.png) rgb(55, 121, 135);
+    box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.25);
+    height: 60px;
+    width: calc((100% - 1200px) /2 + 20px);
+    position: absolute;
+    top: 10px;
+    z-index: 2;
+}
+
+.menu-ribbon_left {
+    left: 0;
+}
+
+.menu-ribbon_right {
+    right: 0;
+    left: auto;
+}
+
+.menu-ribbon:before {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-color: transparent;
+    bottom: 0;
+    z-index: 2;
+}
+
+.menu-ribbon_left:before {
+    border-width: 0 20px 10px 0;
+    border-right-color: #222;
+    right: 0;
+}
+
+.menu-ribbon_right:before {
+    border-width: 0 0 10px 20px;
+    border-left-color: #222;
+    left: 0;
+}
+
+.menu-line__social {
+    position: absolute;
+    right: calc((100% - 1200px) /2 + 10px);
+    top: 6px;
+    z-index: 3;
+}
+
+.menu-line__social .social__link {
+    display: block;
+    box-sizing: border-box;
+    background: url(../images/sprites.svg) no-repeat -62px -3px rgb(60, 93, 124);
+    box-shadow: 0 3px 0px 0px #0f4241;
+    border-radius: 8px;
+    width: 48px;
+    height: 47px;
+    margin-left: 15px;
+}
+
+.menu-line__social .social__link_insta {
+    background: url(../images/sprites.svg) no-repeat -3px -3px rgb(255, 132, 105);
+}
+
+.menu-line {
+    position: relative;
+    z-index: 3;
+}
+
+.menu-line .navbar {
+    display: flex;
+    background: url(../images/stripes.png) rgb(55, 150, 168);
+    box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.25);
+    height: 61px;
+    z-index: 3;
+    margin-top: -20px;
+}
+
+.menu {
+    display: block;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.menu>li {
+    list-style: none;
+    float: left;
+}
+
+.menu>li>a {
+    display: inline-block;
+    font: 700 22px "PTSans-Narrow";
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 16px 18px;
+}
+
+.sub-menu {
+    background: rgb(255,255,255);
+    box-sizing: border-box;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    width: 100%;
+    padding: 80px 0;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    list-style: none;
+    padding: 40px 0 30px;
+    display: none;
+    justify-content: center;
+}
+
+.menu li:hover .sub-menu {
+    display: flex;
+}
+
+.sub-menu__item {
+    box-sizing: border-box;
+    width: 20%;
+    max-width: 200px;
+    margin: 0 25px;
+    position: relative;
+}
+
+.sub-menu__item>a {
+    display: block;
+    position: relative;
+    font: 700 18px "PTSans-Narrow";
+    color: rgb(0, 55, 60);
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 125px 0 5px;
+    position: relative;
+}
+
+.sub-menu__item>a::before {
+    content: "";
+    background-color: rgb(255, 205, 193);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 200px;
+    height: 100px;
+}
+
+.sub-menu__item_clothes>a::before {
+    background-color: rgb(150, 205, 200);
+}
+
+.sub-menu__item_furniture>a::before {
+    background-color: rgb(255, 100, 193);
+}
+
+.sub-menu__item_accessories>a::before {
+    background-color: rgb(255, 50, 193);
+}
+
+.sub-menu__item_more>a::before {
+    background-color: rgb(100, 205, 193);
+}
+
+.sub-menu ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sub-menu__item_medium {
+    margin-bottom: 10px;
+}
+
+.sub-menu__item_medium>a {
+    display: block;
+    font: 700 18px "PTSans-Narrow";
+    color: rgb(0, 55, 60);
+    text-decoration: none;
+    padding: 5px 0;
+}
+
+.sub-menu__item_small>a {
+    display: block;
+    font: 400 17px "PTSans-Narrow";
+    color: rgb(0, 55, 60);
+    text-decoration: none;
+    padding: 3px 0;
+}
+
+.burger {
+    display: none;
+    position: absolute;
+    width: 40px;
+    height: 42px;
+    right: 25px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    cursor: pointer;
+}
+
+.burger span, .burger span::before, .burger span::after {
+    display: block;
+    cursor: pointer; 
+    height: 3px;
+    width: 30px;
+    background: rgb(255, 255, 255);
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    transition: all 200ms ease-in-out;
+}
+
+.burger span::before {
+    content: '';
+    left: 0;
+}
+
+.burger span::after {
+    content: '';
+    left: 0;
+    top: 20px;
+}
+
+.burger_active span {
+    background-color: transparent;
+}
+    
+.burger_active span::before  {
+    transform: rotate(45deg);
+    top: 8px;
+}
+
+.burger_active span::after  {
+    transform: rotate(-45deg);
+    top: 8px;
+} 
