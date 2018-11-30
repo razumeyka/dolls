@@ -4,6 +4,7 @@ var timer=null;
 function setSlide($slider,index){
 	slide=index;
 	$slider.find('.slide.active').one('transitionend webkitTransitionEnd oTransitionEnd',function(){
+        if($(this).hasClass('active'))return;
 		$(this).css('display','none');
 	});
 	$slider.find('.slide').removeClass('active');

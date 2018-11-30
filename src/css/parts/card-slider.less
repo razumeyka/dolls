@@ -10,11 +10,12 @@
 .super_slider .slides_list {
     box-sizing: border-box;
     width: 120px;
-    padding-right: 15px;
+    padding-right: 10px;
     border-right: 1px solid rgb(226, 226, 226);
 }
 
 .super_slider a {
+    box-sizing: border-box;
     display: flex;
     width: 100%;
     height: 140px;
@@ -37,6 +38,7 @@
 .big_image {
     width: 100%;
     flex: 1;
+    cursor: pointer;
 }
 
 .big_image .img {
@@ -71,7 +73,7 @@
     background-color: #fff;
     width: 93px;
     height: 40px;
-    margin: 20px 0 0 7px;
+    margin-top: 20px;
     overflow: hidden;
 }
 
@@ -81,6 +83,10 @@
     height: 100%;
     float: left;
     cursor: pointer;
+    font-size: 18px;
+    color: rgb(121, 121, 121);
+    text-align: center;
+    line-height: 40px;
 }
 
 .card__control_next{
@@ -123,17 +129,8 @@
     }
 
     .super_slider a {
-        display:block;
         float:left;
         height: 500px;
-        text-align: center;
-    }
-
-    .super_slider a img{
-        height: 100%;
-        width: auto;
-        max-width: 100%;
-        margin: auto;
     }
 
     .notrans {

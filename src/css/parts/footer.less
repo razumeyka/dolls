@@ -112,3 +112,32 @@ footer .social__link_insta {
 .sitename a {
     color: rgb(255, 255, 255);
 }
+
+@media screen and (max-width: 767px) {
+    
+    footer .wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .logo-contacts {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }	
+}
+
+@media screen and (max-width: 639px) {    
+    .footer2 .menu li {
+        float: none;
+        text-align: center;
+    }
+    
+    .footer2 .menu li:before {
+        display: none;
+    }
+    
+    .footer2 .menu li:first-child a {
+        padding: 13px 10px 11px;
+    }
+}

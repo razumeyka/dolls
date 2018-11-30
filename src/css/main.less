@@ -1,4 +1,13 @@
 @import "./parts/jquery.fancybox.min.css";
+@import "parts/header-ribbons.less";
+@import "parts/menu-ribbons.less";
+@import "parts/last-news.less";
+@import "parts/footer.less";
+@import "parts/breadcrumbs.less";
+@import "parts/card-slider.less";
+
+
+
 @font-face {
   font-family: 'PTSans';
   src: url('../fonts/PTSans-Regular.eot?#iefix') format('embedded-opentype'),  url('../fonts/PTSans-Regular.woff') format('woff'), url('../fonts/PTSans-Regular.ttf')  format('truetype'), url('../fonts/PTSans-Regular.svg#PTSans-Regular') format('svg');
@@ -57,7 +66,7 @@ p {
     font-size: 18px;
     letter-spacing: 0.5px;
     line-height: 1.35;
-    margin-bottom: 20px;
+    margin: 22px 0;
 }
 
 .wrapper {
@@ -76,8 +85,6 @@ p {
     flex-wrap: wrap;
     justify-content: space-between;
 }
-
-@import "parts/header-ribbons.less";
 
 /*slider*/
 
@@ -108,8 +115,6 @@ p {
 .slider ul {
     display: none;
 }
-
-@import "parts/menu-ribbons.less";
 
 /*brand*/
 
@@ -169,6 +174,10 @@ p {
 
 .caption {
     font: 700 46px "PTSans-Narrow";
+    margin: 0;
+}
+
+.photo-info__caption {
     margin: 0 0 22px;
 }
 
@@ -226,9 +235,6 @@ p {
     text-align: center;
 }
 
-@import "parts/last-news.less";
-@import "parts/footer.less";
-
 /*card*/
 
 header {
@@ -241,8 +247,6 @@ header {
     padding: 35px 0;
 }
 
-@import "parts/breadcrumbs.less";
-
 .card {
     position: relative;
 }
@@ -252,26 +256,26 @@ header {
     position: relative;
 }
 
-@import "parts/card-slider.less";
-
 .card__details {
     flex: 1;
     margin-left: 50px;
 }
 
-.card__article {
+.card__code {
+    display: inline-block;
     box-sizing: border-box;
     border-radius: 10px;
     background-color: rgb(197, 234, 237);
-    width: 75px;
     height: 21px;
     font-size: 12px;
     color: rgb(0, 55, 60);
     text-align: center;
     line-height: 21px;
+    padding: 0 7px;
 }
 
 .card__description {
+    display: flex;
     box-sizing: border-box;
     border-bottom: 1px solid #e2e2e2;
     border-top: 1px solid #e2e2e2;
@@ -280,6 +284,11 @@ header {
     padding: 15px 0 15px 70px;
     position: relative;
     margin: 25px 0 10px;
+    min-height: 86px;
+}
+
+.card__description-text {
+    margin: auto 0;
 }
 
 .card__description::before {
@@ -354,75 +363,6 @@ header {
     .wrapper {
         padding: 0 15px;
     }
-    
-    .menu-ribbon {
-        width: 35px;
-    }
-        
-    .menu-line__social {
-        left: 25px;
-        right: auto;
-    }
-    
-    .menu-line .menu {
-        display: none;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background: white;
-        width: 100%;
-    }
-    
-    .menu-line .menu>li {
-        float: none;
-        text-align: center;
-    }
-    
-    .menu-line .menu>li>a {
-        box-sizing: border-box;
-        color: #4891a2;
-        border-bottom: 1px solid #4891a2;
-        width: 100%;
-        text-shadow: none;
-    }
-    
-    .menu li:hover .sub-menu {
-        display: none;
-    }
-    
-    .sub-menu {
-        box-shadow: none;
-        position: static;
-        width: 100%;
-        padding: 10px 0;
-        border-bottom: 1px solid #4891a2;
-    } 
-    
-    .sub-menu__item {
-        max-width: none;
-        width: 100%;
-        margin: 0;
-    }
-    
-    .sub-menu__item>a::before {
-        display: none;
-    }
-    
-    .sub-menu__item>a {
-        padding: 5px 0;
-    }
-    
-    .sub-menu ul {
-        display: none;
-    }
-    
-    .burger {
-        display: block;
-    }
-    
-    .last-news__ribbon {
-        right: 15px;
-    }
 }
 
 @media screen and (max-width: 1023px) {
@@ -432,24 +372,6 @@ header {
     
     .photo-info__information {
         padding: 65px 0 75px;
-    }
-    
-    .last-news {
-        text-align: center;
-    }
-    
-    .article-list__item {
-        width: 100%;
-        text-align: left;
-        margin: 10px 0;
-    }
-    
-    .last-news__caption {
-        float: none;
-    }
-    
-    .last-news__button {
-        margin: 10px 0 0;
     }
     
     .card__photos {
@@ -466,41 +388,12 @@ header {
         width: 50%;
         padding: 20px 5px;
     }
-    
-    footer .wrapper {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .logo-contacts {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-	
 }
 
 @media screen and (max-width: 639px) {
     
     .photo-info__background3 {
         display: none;
-    }
-    
-    .last-news__ribbon {
-        display: none;
-    }   
-    
-    .footer2 .menu li {
-        float: none;
-        text-align: center;
-    }
-    
-    .footer2 .menu li:before {
-        display: none;
-    }
-    
-    .footer2 .menu li:first-child a {
-        padding: 13px 10px 11px;
     }
     
     .card-icons__item {
