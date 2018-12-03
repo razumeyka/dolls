@@ -54,15 +54,17 @@ $(document).ready(function(){
 	}else{
 		var activeslide=0;
 		function setdesktopslide(index){
-			$('.slides_list').css('transform','translateY(-'+index*$('.slides_list .slide').height()+'px)');
+			$('.slides_list').css('transform','translateY(-'+(index*(15+$('.slides_list .slide').outerHeight()))+'px)');
 		}
 		$('.card__controls .card__control').click(function(){
-			count-=$('.slides_list').height()/$('.slides_list .slide').height();
-			count=Math.ceil(count);
+			var movecan=(($('.slides_list .slide').outerHeight()+15)*$('.slides_list .slide').length-15-$('.slides_list').outerHeight())/($('.slides_list .slide').outerHeight()+15)
+			console.log(movecan);
+			/*  -(height_slider/(height_sliderblock+margin)-slidecount)) */
 			if($(this).hasClass('card__control_next'))activeslide++;
 			if($(this).hasClass('card__control_prev'))activeslide--;
 			if(activeslide<0)activeslide=0;
-			if(activeslide>count)activeslide=count;
+			if(activeslide>movecan)activeslide=movecan;
+			//console.log(activeslide);
 			setdesktopslide(activeslide);
 			
 			

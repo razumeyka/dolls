@@ -21,3 +21,36 @@
     <div class="card__control card__control_prev"><</div>
     <div class="card__control card__control_next">></div>
 </div>
+
+			<script>
+$(document).ready(function(){
+	$('.big_image').click(function(){
+		$.fancybox.open([{
+		src  : "../images/IMG_7810.jpg",
+		opts : {
+			thumb   : "../images/IMG_7810.jpg"
+		}
+	},{
+		src  : "../images/IMG_7812.jpg",
+		opts : {
+			thumb   : "../images/IMG_7812.jpg"
+		}
+	},{
+		src  : "../images/IMG_7816.jpg",
+		opts : {
+			thumb   : "../images/IMG_7816.jpg"
+		}
+	},{
+		src  : "../images/IMG_7818.jpg",
+		opts : {
+			thumb   : "../images/IMG_7818.jpg"
+		}
+	},{
+		src  : "../images/IMG_7825.jpg",
+		opts : {
+			thumb   : "../images/IMG_7825.jpg"
+		}
+	}], {},$('.super_slider .slide.active').index());
+	});
+});
+			</script>
