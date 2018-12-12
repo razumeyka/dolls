@@ -5,7 +5,7 @@
 @import "parts/footer.less";
 @import "parts/breadcrumbs.less";
 @import "parts/card-slider.less";
-
+@import "parts/pagination.less";
 
 
 @font-face {
@@ -43,8 +43,6 @@
   font-style: normal;
 }
 
-html { overflow-x: hidden; }
-
 body{
 	margin:0;
 	padding: 0;
@@ -66,7 +64,7 @@ p {
     font-size: 18px;
     letter-spacing: 0.5px;
     line-height: 1.35;
-    margin: 22px 0;
+    margin: 20px 0;
 }
 
 .wrapper {
@@ -261,7 +259,7 @@ header {
     margin-left: 50px;
 }
 
-.card__code {
+.code {
     display: inline-block;
     box-sizing: border-box;
     border-radius: 10px;
@@ -347,6 +345,70 @@ header {
     color: rgb(121, 121, 121);
 }
 
+/*catalog*/
+
+.category-name {
+    font: 700 46px "PTSans-Narrow";
+    line-height: 1;
+}
+
+.plates {
+    margin: 0 -30px;
+    padding-bottom: 50px;
+}
+
+.plate {
+    box-sizing: border-box;
+    width: 33.3333%;
+    text-decoration: none;
+    padding: 30px;   
+}
+
+.plate__photo {
+    display: block;
+    width: 100%;
+    height: 380px;
+    background: #63bfc7;
+}
+
+.plate__line-code {
+    position: relative;
+    margin: 15px 0 10px;
+}
+
+.plate__line-code:before {
+    content: "";
+    background-color: rgb(226, 226, 226);
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    top: 10px;
+}
+
+.plate__code {
+    margin: 0 auto;
+    position: relative
+}
+
+.plate__name {
+    font: 700 34px "PTSans";
+    color: rgb(1, 1, 1);
+    text-align: center;
+}
+
+.info {
+    padding: 30px 0;
+}
+
+.info__caption {
+    font: 700 24px "PTSans";
+}
+
+.info__description {
+    color: rgb(121, 121, 121);
+}
+
 
 
 /*media*/
@@ -381,6 +443,10 @@ header {
     .card__details {
         margin: 30px 0 0 0;
     }
+    
+    .plate {
+        width: 50%;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -397,6 +463,10 @@ header {
     }
     
     .card-icons__item {
+        width: 100%;
+    }
+    
+    .plate {
         width: 100%;
     }
 }
