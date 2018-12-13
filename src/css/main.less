@@ -347,14 +347,12 @@ header {
 
 /*catalog*/
 
-.category-name {
-    font: 700 46px "PTSans-Narrow";
-    line-height: 1;
-}
-
 .plates {
     margin: 0 -30px;
-    padding-bottom: 50px;
+}
+
+.catalog__plates {
+    padding-bottom: 50px;    
 }
 
 .plate {
@@ -371,28 +369,27 @@ header {
     content: '';
     background: #fff;
     box-shadow: 0 0 5px 0 rgba(0,0,0,.25);
-    width: calc(100% + 20px);
+    width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
-    left: -7px;
+    left: 0;
     z-index: -1;
     opacity: 0;
-    -webkit-transform: scale(0.5);
-    -ms-transform: scale(0.5);
     transform: scale(0.5);
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s;
     transition: all 0.3s;
 }
 
-.plate:hover:after {
-    opacity: 1;
-    -webkit-transform: scale(1);
-    -ms-transform: scale(1);
-    transform: scale(1);
+@media screen and (min-width: 1279px) {
+    
+    .plate:hover {
+        padding: 30px 30px 120px;
+    }
+    
+    .plate:hover:after {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .plate__photo {
@@ -423,23 +420,34 @@ header {
 }
 
 .plate__name {
-    font: 700 34px "PTSans";
+    font: 700 34px "PTSans-Narrow";
     color: rgb(1, 1, 1);
     text-align: center;
+    margin: 0;
 }
 
 .plate__button {
-    display: none;
     border-radius: 30px;
     height: 55px;
+    width: 280px;
     font-size: 17px;
     line-height: 55px;
-    padding: 0 38px;
-    margin: 20px auto 10px;
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    opacity: 0;
+    transition: bottom 0.3s linear, opacity 0.3s linear;
+    pointer-events: none;
 }
 
-.plate:hover .plate__button {
-    display: block;
+@media screen and (min-width: 1279px) {
+    .plate:hover .plate__button {
+        bottom: 40px;
+        opacity: 1;
+        pointer-events: auto;
+    }
 }
 
 .info {
@@ -448,6 +456,7 @@ header {
 
 .info__caption {
     font: 700 24px "PTSans";
+    margin: 0;
 }
 
 .info__description {
