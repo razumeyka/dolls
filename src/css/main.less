@@ -358,10 +358,41 @@ header {
 }
 
 .plate {
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box;
     width: 33.3333%;
     text-decoration: none;
     padding: 30px;   
+    position: relative;
+}
+
+.plate:after {
+    content: '';
+    background: #fff;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,.25);
+    width: calc(100% + 20px);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -7px;
+    z-index: -1;
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.plate:hover:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
 }
 
 .plate__photo {
@@ -395,6 +426,20 @@ header {
     font: 700 34px "PTSans";
     color: rgb(1, 1, 1);
     text-align: center;
+}
+
+.plate__button {
+    display: none;
+    border-radius: 30px;
+    height: 55px;
+    font-size: 17px;
+    line-height: 55px;
+    padding: 0 38px;
+    margin: 20px auto 10px;
+}
+
+.plate:hover .plate__button {
+    display: block;
 }
 
 .info {
