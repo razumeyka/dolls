@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
-<title>qweqwe</title>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="/css/main.css">
     <title>Куклы нового поколения</title>
+	<script src="/js/jquery-3.2.1.min.js"></script>
+	<script src="/js/main.js"></script>
 </head>
 <body>
     <div class="header-ribbons">
@@ -91,7 +92,63 @@
                                     <li class="sub-menu__item_small"><a href="#">Очки</a></li>
                                     <li class="sub-menu__item_small"><a href="#">Украшения</a></li>
                                 </ul>
-                            </li> 
+                            </li>
+                            <li class="sub-menu__item sub-menu__item_dolls sub-menu-item-has-children">
+                                <a href="#">Куклы</a>
+                                <ul>
+                                    <li class="sub-menu__item_medium small-sub-menu-item-has-children">
+                                        <a href="#">Куклы виниловые</a>
+                                        <ul>
+                                            <li class="sub-menu__item_small"><a href="#">Куклы 32 см</a></li>
+                                            <li class="sub-menu__item_small"><a href="#">Куклы 40 см</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-menu__item_medium small-sub-menu-item-has-children">
+                                        <a href="#">Куклы мягконабивные</a>
+                                        <ul>
+                                            <li class="sub-menu__item_small"><a href="#">Куклы 32 смПлатья</a></li>
+                                            <li class="sub-menu__item_small"><a href="#">Куклы 40 см</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sub-menu__item sub-menu__item_clothes sub-menu-item-has-children">
+                                <a href="#">Одежда для кукол</a>
+                                <ul>
+                                    <li class="sub-menu__item_small"><a href="#">Платья</a></li>
+                                    <li class="sub-menu__item_small"><a href="#">Юбки</a></li>
+                                    <li class="sub-menu__item_small"><a href="#">Кофточки</a></li>
+                                    <li class="sub-menu__item_small"><a href="#">Обувь</a></li>
+                                </ul>
+                            </li>
+                            <li class="sub-menu__item sub-menu__item_furniture sub-menu-item-has-children">
+                                <a href="#">Мебель для кукол</a>
+                                <ul>
+                                    <li class="sub-menu__item_small"><a href="#">Кроватки</a></li>
+                                    <li class="sub-menu__item_small"><a href="#">Комоды</a></li>
+                                    <li class="sub-menu__item_small"><a href="#">Столы и стулья</a></li>
+                                    <li class="sub-menu__item_small"><a href="#">Шкафы</a></li>
+                                </ul>
+                            </li>
+                            <li class="sub-menu__item sub-menu__item_accessories sub-menu-item-has-children">
+                                <a href="#">Аксессуары</a>
+                                <ul>
+                                    <li class="sub-menu__item_small"><a href="#">Сумки</a></li>
+                                    <li class="sub-menu__item_small"><a href="#">Очки</a></li>
+                                    <li class="sub-menu__item_small"><a href="#">Украшения</a></li>
+                                    <li class="sub-menu__item_small"><a href="#">Сумки</a></li>
+                                    <li class="sub-menu__item_small"><a href="#">Очки</a></li>
+                                    <li class="sub-menu__item_small"><a href="#">Украшения</a></li>
+                                </ul>
+                            </li>
+                            <li class="sub-menu__item sub-menu__item_more sub-menu-item-has-children">
+                                <a href="#">Что-то еще</a>
+                                <ul>
+                                    <li class="sub-menu__item_small"><a href="#">Сумки</a></li>
+                                    <li class="sub-menu__item_small"><a href="#">Очки</a></li>
+                                    <li class="sub-menu__item_small"><a href="#">Украшения</a></li>
+                                </ul>
+                            </li>  
                         </ul>
                     </li>
                     <li>
@@ -152,16 +209,51 @@
         <li class="controls-mobile__control active"></li>
     </ul>
 </div>
-                    <div class="card__controls">
-                        <div class="card__control card__control_prev"></div>
-                        <div class="card__control card__control_next"></div>
-                    </div>
+<div class="card__controls">
+    <div class="card__control card__control_prev"><</div>
+    <div class="card__control card__control_next">></div>
+</div>
+
+			<script>
+$(document).ready(function(){
+	$('.big_image').click(function(){
+		$.fancybox.open([{
+		src  : "../images/IMG_7810.jpg",
+		opts : {
+			thumb   : "../images/IMG_7810.jpg"
+		}
+	},{
+		src  : "../images/IMG_7812.jpg",
+		opts : {
+			thumb   : "../images/IMG_7812.jpg"
+		}
+	},{
+		src  : "../images/IMG_7816.jpg",
+		opts : {
+			thumb   : "../images/IMG_7816.jpg"
+		}
+	},{
+		src  : "../images/IMG_7818.jpg",
+		opts : {
+			thumb   : "../images/IMG_7818.jpg"
+		}
+	},{
+		src  : "../images/IMG_7825.jpg",
+		opts : {
+			thumb   : "../images/IMG_7825.jpg"
+		}
+	}], {},$('.super_slider .slide.active').index());
+	});
+});
+			</script>
                 </div>
                 <div class="card__details">
-                    <div class="card__article">Art. 11002</div>
+                    <div class="card__code">Art. 11002</div>
                     <h1 class="caption">Бланка</h1>
                     <p>Здесь будет описание куклы «Бланка». Текст про уникальность и особенности изделия. Красивые куколки требуют красивого описания. Материалы очень качественные: винил, нейлон. Все как положено и абсолютно безопасно.</p>
-                    <div class="card__description">Тут описание материалов. Волосы из высококачественного нейлона. Туловище выполнено из винила. Глаза — пластик. Одежда из натурального текстиля. Все проходит проверку и сертификацию. 100% по ГОСТу, и даже лучше, даже интереснее.</div>
+                    <div class="card__description">
+                        <div class="card__description-text">Тут описание материалов. Волосы из высококачественного нейлона. Туловище выполнено из винила. Глаза — пластик. Одежда из натурального текстиля. Все проходит проверку и сертификацию. 100% по ГОСТу, и даже лучше, даже интереснее.</div>
+                    </div>
                     <div class="card-icons flex">
                         <div class="card-icons__item flex">
                             <div class="card-icons__icon card-icons__icon_product-size"></div>
@@ -295,6 +387,4 @@
     </div>
 </footer>
 </body>
-<script src="/js/jquery-3.2.1.min.js"></script>
-<script src="/js/main.js"></script>
 </html>
