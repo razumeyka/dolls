@@ -10,78 +10,20 @@
             @@include('template/breadcrumbs.html')
             <h1 class="caption">Куклы 32 см</h1>
             <div class="plates catalog__plates flex">
-                <a href="#" class="plate">
-                    <div class="plate__photo"></div>   
-                    <div class="plate__line-code flex">
-                        <div class="plate__code code">Art. 11002</div>
-                    </div>
-                    <h2 class="plate__name">Марита</h2>
-                    <div class="button button_oval plate__button">Смотреть Подробнее</div>
-                </a>
-                <a href="#" class="plate">
-                    <div class="plate__photo"></div>
-                    <div class="plate__line-code flex">
-                        <div class="plate__code code">Art. 11002</div>
-                    </div>
-                    <h2 class="plate__name">Софи</h2>
-                    <div class="button button_oval plate__button">Смотреть Подробнее</div>
-                </a>
-                <a href="#" class="plate">
-                    <div class="plate__photo"></div>
-                    <div class="plate__line-code flex">
-                        <div class="plate__code code">Art. 11002</div>
-                    </div>
-                    <h2 class="plate__name">Эстель</h2>
-                    <div class="button button_oval plate__button">Смотреть Подробнее</div>
-                </a>
-                <a href="#" class="plate">
-                    <div class="plate__photo"></div>   
-                    <div class="plate__line-code flex">
-                        <div class="plate__code code">Art. 11002</div>
-                    </div>
-                    <h2 class="plate__name">Бланка</h2>
-                    <div class="button button_oval plate__button">Смотреть Подробнее</div>
-                </a>
-                <a href="#" class="plate">
-                    <div class="plate__photo"></div>
-                    <div class="plate__line-code flex">
-                        <div class="plate__code code">Art. 11002</div>
-                    </div>
-                    <h2 class="plate__name">Эстель</h2>
-                    <div class="button button_oval plate__button">Смотреть Подробнее</div>
-                </a>
-                <a href="#" class="plate">
-                    <div class="plate__photo"></div>
-                    <div class="plate__line-code flex">
-                        <div class="plate__code code">Art. 11002</div>
-                    </div>
-                    <h2 class="plate__name">Марита</h2>
-                    <div class="button button_oval plate__button">Смотреть Подробнее</div>
-                </a>
-                <a href="#" class="plate">
-                    <div class="plate__photo"></div>   
-                    <div class="plate__line-code flex">
-                        <div class="plate__code code">Art. 11002</div>
-                    </div>
-                    <h2 class="plate__name">Марита</h2>
-                    <div class="button button_oval plate__button">Смотреть Подробнее</div>
-                </a>
-                <a href="#" class="plate">
-                    <div class="plate__photo"></div>
-                    <div class="plate__line-code flex">
-                        <div class="plate__code code">Art. 11002</div>
-                    </div>
-                    <h2 class="plate__name">Софи</h2>
-                    <div class="button button_oval plate__button">Смотреть Подробнее</div>
-                </a>
-                <a href="#" class="plate">
-                    <div class="plate__photo"></div>
-                    <div class="plate__line-code flex">
-                        <div class="plate__code code">Art. 11002</div>
-                    </div>
-                    <h2 class="plate__name">Эстель</h2>
-                    <div class="button button_oval plate__button">Смотреть Подробнее</div>
-                </a>
+				@@loop('template/catalog_plate.html',[
+					{"title":"Марита"},
+					{"title":"Софи"},
+					{"title":"Эстель"},
+					{"title":"Бланка"},
+					{"title":"Марита"},
+					{"title":"Софи"},
+					{"title":"Эстель"},
+					{"title":"Бланка"},
+					{"title":"Марита"},
+					{"title":"Софи"},
+					{"title":"Эстель"},
+					{"title":"Бланка"}
+					])
             </div>
             @@include('template/pagination.html') 
             <div class="info">
