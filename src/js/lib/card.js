@@ -2,6 +2,7 @@ var initialX=0;
 var currentX=0;
 var activeslide=0;
 var active = false;
+var margin=25;
 
 function initcardslider(){
 	console.log(window.innerWidth);
@@ -23,7 +24,7 @@ function initcardslider(){
 		
 }
 function setdesktopslide(index){
-	$('.slides_list').css('transform','translateY(-'+(index*(10+$('.slides_list .slide').height()))+'px)');
+	$('.slides_list').css('transform','translateY(-'+(index*(margin+$('.slides_list .slide').height()))+'px)');
 }
 $(document).ready(function(){
 	
@@ -88,7 +89,7 @@ $(document).ready(function(){
 		activeslide=slide;
 	});
 	$('.card__controls .card__control').click(function(){
-		var movecan=(($('.slides_list .slide').height()+10)*$('.slides_list .slide').length-10-$('.slides_list').height())/($('.slides_list .slide').height()+10)
+		var movecan=(($('.slides_list .slide').height()+margin)*$('.slides_list .slide').length-margin-$('.slides_list').height())/($('.slides_list .slide').height()+margin)
 		console.log(movecan);
 		/*  -(height_slider/(height_sliderblock+margin)-slidecount)) */
 		if($(this).hasClass('card__control_next'))activeslide++;
@@ -107,7 +108,7 @@ $(document).ready(function(){
 		$(this).addClass('active');
 		if($('.big_image .img').is(':visible')){
 			console.log('click')
-			$('.big_image .img').css('background','url('+$(this).attr('href')+') no-repeat center').css('background-size','cover');
+			$('.big_image .img').css('background','url('+$(this).attr('href')+') no-repeat center').css('background-size','contain');
 
 		}
 	});
