@@ -24,12 +24,14 @@ $(document).ready(function(){
     $('.menu li.sub-menu-item-has-children>a').click(function(e){
 		if(window.innerWidth>1279)return ;
         e.preventDefault();
-        $('.sub-menu ul').not($(this).closest('li').find(' ul')).slideUp('300');	$(this).closest('li').find('ul:first').slideToggle('300');
+        $('.sub-menu ul').not($(this).closest('li').find(' ul')).slideUp('300');	
+		$(this).closest('li').find('ul:first').slideToggle('300');
     }); 
     
     $('.menu li.small-sub-menu-item-has-children>a').click(function(e){
 		if(window.innerWidth>1279)return ;
         e.preventDefault();
-        $('.sub-menu ul').not($(this).closest('li').find(' ul')).not($(this).closest('li').closest('ul')).slideUp('300');	$(this).closest('li').find('ul:first').slideToggle('300');
+        $('.sub-menu ul').not($(this).closest('li').find(' ul')).not($(this).closest('li').closest('ul')).slideUp('300');	
+		$(this).closest('li').find('ul:first').slideToggle('300');
     });
 }); 
